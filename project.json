@@ -1,0 +1,46 @@
+{
+  "langrev": "1",
+  "warnings": [ "no-unused" ],
+  "dependency-search-paths": [ "lib" ],
+  "dependencies": [ "raylib6" ],
+  "authors": [ "Manuel Barrio Linares <mbarriolinares@gmail.com>" ],
+  "version": "0.1.0",
+  "sources": [ "src/**" ],
+  "test-sources": [ "test/**" ],
+  "build-dir": "build",
+  "output": "build",
+  "targets": {
+    "debug": {
+      "type": "executable",
+      "name": "c3ed",
+      "opt": "O0"
+    },
+    "linux": {
+      "type": "executable",
+      "name": "c3ed",
+      "target": "linux-x64",
+      "opt": "Oz",
+      "debug-info": "none",
+      "link-args": ["-s", "-Wl,--allow-multiple-definition"],
+      "features": ["FAST"]
+    },
+    "windows": {
+      "type": "executable",
+      "name": "c3ed",
+      "target": "windows-x64",
+      "opt": "Oz",
+      "debug-info": "none",
+      "features": ["FAST"]
+    },
+    "macos": {
+      "type": "executable",
+      "name": "c3ed",
+      "target": "macos-aarch64",
+      "opt": "Oz",
+      "debug-info": "none",
+      "features": ["FAST"]
+    }
+  },
+  "cpu": "generic",
+  "opt": "O0"
+}
